@@ -1,0 +1,55 @@
+<!-- Q9).Accept the marks of English, Math and Science, Social Studies Subject and
+display the stream allotted according to following
+
+All Subjects more than 80 marks — Science Stream
+
+English >80 and Math, Science above 50 –Commerce Stream
+
+English > 80 and Social studies > 80 — Humanities -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Stream marks</title>
+</head>
+<body>
+    
+    <label for="english">english:</label>
+    <input type="text" id="english" name="english" value="0"><br>
+    <label for="maths">maths:</label>
+    <input type="text" id="maths" name="maths" value="0"><br>
+    <label for="science">science:</label>
+    <input type="text" id="science" name="science" value="0"><br>
+    <label for="social">social:</label>
+    <input type="text" id="social" name="social" value="0"><br>
+    <p id="eliglible"></p>
+        <button type="button" onclick="submit()">submit</button>
+    
+    <script>
+        let submit=()=>{
+        var english = document.getElementById("english").value;
+        var maths = document.getElementById("maths").value;
+        var science = document.getElementById("science").value;
+        var social = document.getElementById("social").value;
+        var total = english + maths + science + social;
+        var avg = total / 4;
+        console.log(english);
+        if((english>80)&&(maths>80)&&(science>80)&&(social>80)){
+            document.getElementById("eliglible").innerHTML = "you are eliglible for science stream";
+        }
+        else if(((maths>80)&&(english>80))&&(science>=50)){
+            document.getElementById("eliglible").innerHTML = "you are eliglible for commerce stream";
+        }
+        else if((english>=80)&&(social>=80)){
+            document.getElementById("eliglible").innerHTML = "you are eliglible for Humanities";
+        }
+        else{
+            document.getElementById("eliglible").innerHTML = "you are not eliglible for any stream";
+        }
+        }
+
+        </script>
+</body>
+</html>

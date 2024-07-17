@@ -1,0 +1,45 @@
+<!-- Q8).Accept the kilometers covered and calculate the bill according to the following
+criteria:
+
+First 10 Km Rs11/km
+
+Next 90Km Rs 10/km
+
+After that Rs9/km?-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CabRent</title>
+</head>
+<body>
+    <label for="kilometers">Enter the kilometers:</label>
+    <input type="number" id="kilometers" name="kilometers" value="0">
+    <br><br>
+    <label for="Amount">Amount</label>
+    <h1 id="Amount"></h1>
+    <br><br>
+    <button type="submit" onclick="calculate()">Calculate</button>
+
+    <script>
+        let calculate = ()=> {
+            var kilometers = document.getElementById("kilometers").value;
+           
+            if (kilometers<=10 && kilometers>0) {
+                document.getElementById("Amount").innerHTML= kilometers*11;
+                
+                } else if ( kilometers >10 && kilometers<=100) {
+                        let rent = (10*11)+((kilometers-10)* 10);
+                        document.getElementById("Amount").innerHTML= rent;
+                    } 
+                    else if (kilometers>=101) {
+                        let rent2 = (10*11)+((90)* 10)+((kilometers-100)*9);
+                        document.getElementById("Amount").innerHTML= rent2;
+
+                }
+            }
+
+    </script>
+</body>
+</html>

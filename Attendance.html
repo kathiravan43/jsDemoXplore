@@ -1,0 +1,42 @@
+<!-- Q1). Accept the following from the user and calculate the percentage of class
+attended:
+
+a. Total number of working days
+
+b. Total number of days for absent
+
+After calculating percentage show that, If the percentage is less than 75, than
+student will not be able to sit in exam. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+</head>
+<body>
+    <label for="workingdays">No.of.Working.Days:</label>
+    <input type="number" name="workingdays" id="workingdays" value="0"><br>
+    <label for="absentdays">No.of.present.Days:</label>
+    <input type="number" name="absentdays" id="absentdays" value="0"><br>
+    <button type="submit" onclick="check()">submit</button>
+    <p id="result"></p>
+    <script>
+        let check = ()=>{
+            let workingdays = document.getElementById("workingdays").value;
+            let absentdays = document.getElementById("absentdays").value;
+            let result = (absentdays/workingdays)*100;
+            if(result>=75){
+                document.getElementById("result").innerHTML = "You can sit the exam";
+            }
+            else{
+                document.getElementById("result").innerHTML = "You can't sit the exam";
+            }
+        }
+    </script>
+
+
+</body>
+</html>

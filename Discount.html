@@ -1,0 +1,39 @@
+<!-- Q2). Accept the marked price from the user and calculate the Net amount
+as(Marked Price – Discount) to pay according to following criteria:
+
+Marked Price Discount
+>10000 20%
+>7000 and <=10000 15%
+<=7000 10% -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+</head>
+<body>
+    <label for="originalprice">original Price:</label>
+    <input type="text" id="originalprice" name="originalprice" value="0"><br>
+ 
+    <label for="discountedprice">Discounted Price:</label>
+    <input type="text" id="discountedprice" name="discountedprice" value="0"><br>
+    <button type="submit" onclick="submit()">submit</button>
+
+    <script>
+        let submit = ()=>{
+        let originalprice = document.getElementById("originalprice").value;
+       // let discount = document.getElementById("discount").value;
+        if(originalprice>=10000){
+            let discountedprice =  (originalprice*20/100);
+            document.getElementById("discountedprice").value = discountedprice;
+        }
+        else if(originalprice>=7000 && originalprice<10000){
+            let discountedprice = (originalprice*15/100);
+            document.getElementById("discountedprice").value = discountedprice;
+        }
+    }
+        </script>
+
+</body>
+</html>

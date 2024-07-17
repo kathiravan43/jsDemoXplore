@@ -1,0 +1,37 @@
+<!-- Q17)Write a program to accept a number and check whether it is a perfect number
+or not.
+
+(Perfect number is a positive integer which is equal to the sum of its divisors like
+divisors of 6 are 1,2,3, and
+
+sum of divisors is also 6, so 6 is the perfect number)? -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfect Number</title>
+  </head>
+  <body>
+    <label for="num1">num1:</label>
+    <input type="text" name="num1" id="num1" /><br /><br />
+    <button type="submit" onclick="perfectNumber()">check</button>
+    <h2 id="result" style="align-items: center; color: chartreuse; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></h2>
+    <script>
+      function perfectNumber() {
+        var num1 = document.getElementById("num1").value;
+        var sum = 0;
+        for (var i = 1; i <= Math.floor(num1 / 2); i++) {
+          if (num1 % i == 0) {
+            sum += i;
+          }
+        }
+        if (sum == num1) {
+          document.getElementById("result").innerHTML= "its  a perfect number";
+        } else {
+            document.getElementById("result").innerHTML= "its not  a perfect number";
+        }
+      }
+    </script>
+  </body>
+</html>

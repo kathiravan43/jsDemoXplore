@@ -1,0 +1,37 @@
+<!-- Q6.)Accept three sides of triangle and check whether the triangle is possible or not.
+
+(triangle is possible only when sum of any two sides is greater than 3rd side).? -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle</title>
+</head>
+<body>
+    <label for="side1">side1:</label>
+    <input type="text" id="side1" name="side1" value="0">
+    <label for="side2">side2:</label>
+    <input type="text" id="side2" name="side2" value="0">
+    <label for="side3">side3:</label>
+    <input type="text" id="side3" name="side3" value="0">
+    <button type="submit" onclick="check()">check</button>
+    <script>
+        function check(){
+            var a = document.getElementById("side1").value;
+            var b = document.getElementById("side2").value;
+            var c = document.getElementById("side3").value;
+            if(a+b>c && b+c > a && c+a > b){
+                alert("Triangle is possible");
+            }
+            else{
+                alert("Triangle is not possible");
+                }
+            
+        }
+
+    </script>
+</body>
+</html>
